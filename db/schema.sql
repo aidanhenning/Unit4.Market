@@ -25,6 +25,7 @@ CREATE TABLE products(
 );
 
 CREATE TABLE orders_products(
+    PRIMARY KEY (order_id, product_id),
     order_id INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
     product_id INTEGER NOT NULL REFERENCES products(id) ON DELETE CASCADE,
     quantity INTEGER NOT NULL
